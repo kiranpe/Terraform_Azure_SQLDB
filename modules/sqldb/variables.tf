@@ -14,10 +14,15 @@ variable "server_name" {
   description = "Name of the server. "
 }
 
+variable "sql_version" {
+  type    = string
+  default = "12.0"
+}
+
 variable "admin_login_name" {
   type        = string
   default     = "dbadmin"
-  description = "Login name for the sql server administrator. If not set the default login name will be 'kitten83'."
+  description = "Login name for the sql server administrator."
 }
 
 variable "database_name" {
@@ -30,6 +35,16 @@ variable "firewall_rule_name" {
   type        = string
   default     = "AllowAccessToAll"
   description = "Firewall rule name"
+}
+
+variable "firewall_start_ip" {
+  type    = string
+  default = "0.0.0.0"
+}
+
+variable "firewall_end_ip" {
+  type    = string
+  default = "255.255.255.255"
 }
 
 variable "database_edition" {
